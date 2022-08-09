@@ -342,10 +342,10 @@ np.savetxt(result_record_path+record_name_prefix+'.csv', general_vote_results, d
 true_label = test_label
 predict_label = general_vote_results
 
-# print(true_label.shape)
-# print(true_label[:10])
-# print(predict_label.shape)
-# print(predict_label[:10])
+print(true_label.shape)
+print(true_label[:10])
+print(predict_label.shape)
+print(predict_label[:10])
 
 precision = skmet.precision_score(y_true=true_label, y_pred=predict_label)
 recall = skmet.recall_score(y_true=true_label, y_pred=predict_label)
