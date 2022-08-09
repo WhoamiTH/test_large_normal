@@ -138,7 +138,6 @@ set_para()
 train_file_name = '/srv/scratch/z5102138/cifar10/all_train_data.pkl'
 train_label_name = '/srv/scratch/z5102138/cifar10/all_train_label.pkl'
 
-
 model_name = './test_{0}/model_{1}/record_{2}/{1}_{3}'.format(dataset_name, train_method, record_index, dataset_index)
 
 
@@ -193,10 +192,14 @@ class Classification(nn.Module):
         x = self.conv1(x1)
         x = self.relu(x)
         x = nn.functional.max_pool2d(x, (2, 2))
+        print(x.shape)
         x = self.conv2(x)
         x = self.relu(x)
         x = nn.functional.max_pool2d(x, 2) 
-        x = x.view(x.size()[0], -1)  # 展平  x.size()[0]是batch size
+        print(x.shape)
+        print(x.size())
+        x = x.reshape(x.size()[0], -1)
+        # x = x.view(x.size()[0], -1)  # 展平  x.size()[0]是batch size
         x = self.relu(self.fc1(x))
         x = self.relu(self.fc2(x))
         x = self.fc3(x)
@@ -279,8 +282,9 @@ optimizer = torch.optim.Adam(net.parameters(), lr=0.001)
 # input_valid_data = input_valid_data.to(device)
 # input_valid_label_gpu = input_valid_label.to(device)
 
-
+cur_train_epochs = 0
 for epoch in range(start_epochs+1, num_epochs+1):
+    cur_train_epochs += 1
     train_x, train_y = generate_batch_data(base_train_data, base_train_label, batch_size)
 
 
@@ -326,7 +330,7 @@ for epoch in range(start_epochs+1, num_epochs+1):
         cur_train_method = '_'.join(cur_train_method_list)
         cur_model_name = './test_{0}/model_{1}/record_{2}/{1}_{3}'.format(dataset_name, cur_train_method, record_index, dataset_index)
         torch.save(net, cur_model_name)
-        save_epoch = dependency_dict[epoch]
+        save_epoch = dependency_dict[cur_train_epochs]
         print('save model {0}'.format(cur_model_name))
 
         last_train_epoch = 0
@@ -339,12 +343,12 @@ for epoch in range(start_epochs+1, num_epochs+1):
                 # 更新已有模型标记
                 last_train_epoch = train_epoch
             else:
-                save_epoch = train_epoch
+                save_epoch = int(train_epoch)
                 if last_train_epoch != cur_train_epochs:
                     history_train_method = 'MLP_{0}_{1}'.format(infor_method, last_train_epoch)
                     history_model_name = './test_{0}/model_{1}/record_{2}/{1}_{3}'.format(dataset_name, history_train_method, record_index, dataset_index)
                     net = torch.load(history_model_name, map_location=device)
-                    cur_train_epochs = last_train_epoch
+                    cur_train_epochs = int(last_train_epoch)
                 break
     
     if cur_train_epochs >= num_epochs:
