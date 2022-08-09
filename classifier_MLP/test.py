@@ -318,9 +318,10 @@ test_result = test_result[:, 0].reshape(-1, 1)
 
 test_length = test_data.shape[0]
 # test_pred_results = test_result.reshape(test_length, test_ref_num)
-# test_pred_results[test_pred_results<0.5] = 0
-# test_pred_results[test_pred_results>=0.5] = 1
-# test_pred_results = test_result
+test_pred_results = test_result
+test_pred_results[test_pred_results<0.5] = 0
+test_pred_results[test_pred_results>=0.5] = 1
+
 
 # 获取 vote 结果
 # if transform_method == 'normal':
@@ -331,7 +332,7 @@ test_length = test_data.shape[0]
 # general_vote_results[general_vote_results>=boundary_number] = 1
 
 # general_vote_results = general_vote_results.reshape(-1,1)
-general_vote_results = test_result
+general_vote_results = test_pred_results
 
 
 # 保存测试及预估结果数据
