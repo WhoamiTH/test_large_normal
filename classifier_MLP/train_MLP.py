@@ -192,12 +192,9 @@ class Classification(nn.Module):
         x = self.conv1(x1)
         x = self.relu(x)
         x = nn.functional.max_pool2d(x, (2, 2))
-        print(x.shape)
         x = self.conv2(x)
         x = self.relu(x)
         x = nn.functional.max_pool2d(x, 2) 
-        print(x.shape)
-        print(x.size())
         x = x.reshape(x.size()[0], -1)
         # x = x.view(x.size()[0], -1)  # 展平  x.size()[0]是batch size
         x = self.relu(self.fc1(x))
@@ -354,14 +351,14 @@ for epoch in range(start_epochs+1, num_epochs+1):
     if cur_train_epochs >= num_epochs:
         break
 
-            
-cur_train_method_list = [model_type, infor_method, str(save_epoch)]
-cur_train_method = '_'.join(cur_train_method_list)
-cur_model_name = './test_{0}/model_{1}/record_{2}/{1}_{3}'.format(dataset_name, cur_train_method, record_index, dataset_index)
-torch.save(net, cur_model_name)
-print('save model {0}'.format(cur_model_name))   
+if save_epoch != None:
+    cur_train_method_list = [model_type, infor_method, str(save_epoch)]
+    cur_train_method = '_'.join(cur_train_method_list)
+    cur_model_name = './test_{0}/model_{1}/record_{2}/{1}_{3}'.format(dataset_name, cur_train_method, record_index, dataset_index)
+    torch.save(net, cur_model_name)
+    print('save model {0}'.format(cur_model_name))   
 
-torch.save(net, model_name)
+    torch.save(net, model_name)
 
 
 finish = time.process_time()
