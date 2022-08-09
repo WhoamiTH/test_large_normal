@@ -1,0 +1,24 @@
+/home/z5102138/anaconda3/envs/py36/bin/python
+/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/torch/cuda/__init__.py:104: UserWarning: 
+A100-PCIE-40GB with CUDA capability sm_80 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_61 sm_70 sm_75 compute_37.
+If you want to use the A100-PCIE-40GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(incompatible_device_warn.format(device_name, capability, " ".join(arch_list), device_name))
+/srv/scratch/z5102138/cifar10/all_train_data.pkl
+./test_yeast5/model_MLP_normal_2000/record_1/MLP_normal_2000_1
+----------------------
+
+
+
+./test_yeast5/model_MLP_normal_2000/record_1/MLP_normal_2000_1
+./test_yeast5/model_MLP_normal_1500/record_1/MLP_normal_1500_1
+./test_yeast5/model_MLP_normal_1000/record_1/MLP_normal_1000_1
+./test_yeast5/model_MLP_normal_500/record_1/MLP_normal_500_1
+./test_yeast5/model_MLP_normal_200/record_1/MLP_normal_200_1
+Traceback (most recent call last):
+  File "./classifier_MLP/train_MLP.py", line 282, in <module>
+    train_x, train_y = generate_batch_data(positive_data, negative_data, infor_method, informative_minority_data, border_majority_data, batch_size)
+NameError: name 'positive_data' is not defined

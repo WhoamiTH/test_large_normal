@@ -1,0 +1,16 @@
+/home/z5102138/anaconda3/envs/py36/bin/python
+/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/srv/scratch/z5102138/cifar10/all_train_data.pkl
+./test_yeast5/model_MLP_normal_2000/record_1/MLP_normal_2000_2
+----------------------
+
+
+
+./test_yeast5/model_MLP_normal_200/record_1/MLP_normal_200_2
+Traceback (most recent call last):
+  File "./classifier_MLP/train_MLP.py", line 293, in <module>
+    predict = net(input_data)
+  File "/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+TypeError: forward() missing 1 required positional argument: 'x2'

@@ -1,0 +1,91 @@
+/home/z5102138/anaconda3/envs/py36/bin/python
+/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/srv/scratch/z5102138/cifar10/all_train_data.pkl
+/srv/scratch/z5102138/cifar10/all_test_data.pkl
+MLP_normal_1000
+normal
+./test_yeast5/model_MLP_normal_1000/record_1/MLP_normal_1000_1
+./test_yeast5/result_MLP_normal_1000_normal/record_1/
+----------------------
+
+
+
+Traceback (most recent call last):
+  File "./classifier_MLP/test.py", line 234, in <module>
+    test_data = load_data(test_file_name)
+  File "./classifier_MLP/test.py", line 143, in load_data
+    modelInput = pickle.load(fileObject)
+NameError: name 'pickle' is not defined
+/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/srv/scratch/z5102138/cifar10/all_train_data.pkl
+/srv/scratch/z5102138/cifar10/all_test_data.pkl
+MLP_normal_1000
+normal
+./test_yeast5/model_MLP_normal_1000/record_1/MLP_normal_1000_2
+./test_yeast5/result_MLP_normal_1000_normal/record_1/
+----------------------
+
+
+
+Traceback (most recent call last):
+  File "./classifier_MLP/test.py", line 234, in <module>
+    test_data = load_data(test_file_name)
+  File "./classifier_MLP/test.py", line 143, in load_data
+    modelInput = pickle.load(fileObject)
+NameError: name 'pickle' is not defined
+/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/srv/scratch/z5102138/cifar10/all_train_data.pkl
+/srv/scratch/z5102138/cifar10/all_test_data.pkl
+MLP_normal_1000
+normal
+./test_yeast5/model_MLP_normal_1000/record_1/MLP_normal_1000_3
+./test_yeast5/result_MLP_normal_1000_normal/record_1/
+----------------------
+
+
+
+Traceback (most recent call last):
+  File "./classifier_MLP/test.py", line 234, in <module>
+    test_data = load_data(test_file_name)
+  File "./classifier_MLP/test.py", line 143, in load_data
+    modelInput = pickle.load(fileObject)
+NameError: name 'pickle' is not defined
+/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/srv/scratch/z5102138/cifar10/all_train_data.pkl
+/srv/scratch/z5102138/cifar10/all_test_data.pkl
+MLP_normal_1000
+normal
+./test_yeast5/model_MLP_normal_1000/record_1/MLP_normal_1000_4
+./test_yeast5/result_MLP_normal_1000_normal/record_1/
+----------------------
+
+
+
+Traceback (most recent call last):
+  File "./classifier_MLP/test.py", line 234, in <module>
+    test_data = load_data(test_file_name)
+  File "./classifier_MLP/test.py", line 143, in load_data
+    modelInput = pickle.load(fileObject)
+NameError: name 'pickle' is not defined
+/home/z5102138/anaconda3/envs/py36/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/srv/scratch/z5102138/cifar10/all_train_data.pkl
+/srv/scratch/z5102138/cifar10/all_test_data.pkl
+MLP_normal_1000
+normal
+./test_yeast5/model_MLP_normal_1000/record_1/MLP_normal_1000_5
+./test_yeast5/result_MLP_normal_1000_normal/record_1/
+----------------------
+
+
+
+Traceback (most recent call last):
+  File "./classifier_MLP/test.py", line 234, in <module>
+    test_data = load_data(test_file_name)
+  File "./classifier_MLP/test.py", line 143, in load_data
+    modelInput = pickle.load(fileObject)
+NameError: name 'pickle' is not defined
