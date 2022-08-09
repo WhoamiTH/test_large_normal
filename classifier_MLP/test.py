@@ -283,14 +283,15 @@ class Classification(nn.Module):
         self.fc2   = nn.Linear(32, 16)
         self.fc3   = nn.Linear(16, 1)
   
-    def forward(self, x1, x2): 
+    def forward(self, x1): 
         x = self.conv1(x1)
         x = self.relu(x)
         x = nn.functional.max_pool2d(x, (2, 2))
         x = self.conv2(x)
         x = self.relu(x)
         x = nn.functional.max_pool2d(x, 2) 
-        x = x.view(x.size()[0], -1)  # 展平  x.size()[0]是batch size
+        x = x.reshape(x.size()[0], -1)
+        # x = x.view(x.size()[0], -1)  # 展平  x.size()[0]是batch size
         x = self.relu(self.fc1(x))
         x = self.relu(self.fc2(x))
         x = self.fc3(x)
