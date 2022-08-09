@@ -1,0 +1,22 @@
+/home/junda/.conda/envs/thenv/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+./test_abalone19/standlization_data/abalone19_std_train_1.csv
+./test_abalone19/draw_pca_pic/record_1/
+----------------------
+
+
+
+Traceback (most recent call last):
+  File "./draw_pca_pic/draw_original_tsne.py", line 234, in <module>
+    tsne_train_data = condense_data_tsne(train_data)
+  File "./draw_pca_pic/draw_original_tsne.py", line 26, in condense_data_tsne
+    tsne = TSNE(n_components=num_of_components)
+NameError: name 'TSNE' is not defined
+/home/junda/.conda/envs/thenv/lib/python3.6/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+./test_yeast3/standlization_data/yeast3_std_train_1.csv
+./test_yeast3/model_LR_minus_not_mirror/record_1/LR_minus_not_mirror_1.m
+Traceback (most recent call last):
+  File "./classifier_LR/train_LR_minus_not_mirror.py", line 205, in <module>
+    train_data, train_label = handle_data.loadTrainData(train_file_name)
+NameError: name 'handle_data' is not defined
