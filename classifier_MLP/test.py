@@ -306,7 +306,7 @@ def get_MLP_predict_result(test_data, net):
 
     test_input_data = test_input_data.to(device)
 
-    output = net(test_input_data_1, test_input_data_2)
+    output = net(test_input_data)
     return output
 
 cur_test_data = test_data
