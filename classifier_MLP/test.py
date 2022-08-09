@@ -138,6 +138,14 @@ def get_boundray_num(test_ref_num, boundary_type):
     else:
         return int(boundary_type)
 
+def load_data(file_name):
+    fileObject = open(file_name, 'rb')
+    modelInput = pickle.load(fileObject)
+    fileObject.close()
+    return modelInput
+
+
+
 # def get_test_info(test_method):
 #     test_info_list = test_method.split('_')
     
