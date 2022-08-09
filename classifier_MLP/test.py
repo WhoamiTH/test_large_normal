@@ -314,7 +314,7 @@ cur_test_data = test_data
 # 获取初步结果
 test_result = get_MLP_predict_result(cur_test_data, net)
 test_result = test_result.detach().to('cpu').numpy()
-test_result = test_result[:, 0]
+test_result = test_result[:, 0].reshape(-1, 1)
 
 test_length = test_data.shape[0]
 # test_pred_results = test_result.reshape(test_length, test_ref_num)
@@ -342,10 +342,10 @@ np.savetxt(result_record_path+record_name_prefix+'.csv', general_vote_results, d
 true_label = test_label
 predict_label = general_vote_results
 
-print(true_label.shape)
-print(true_label[:10])
-print(predict_label.shape)
-print(predict_label[:10])
+# print(true_label.shape)
+# print(true_label[:10])
+# print(predict_label.shape)
+# print(predict_label[:10])
 
 precision = skmet.precision_score(y_true=true_label, y_pred=predict_label)
 recall = skmet.recall_score(y_true=true_label, y_pred=predict_label)
