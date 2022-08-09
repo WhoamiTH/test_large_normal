@@ -23,6 +23,7 @@ from torch.nn import init
 from sklearn.metrics import confusion_matrix
 import sampling
 import os
+import pickle
 
 
 def get_test_ref_samples(test_data, reference_data, reference_label, test_ref_num):
