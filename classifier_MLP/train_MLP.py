@@ -281,7 +281,7 @@ optimizer = torch.optim.Adam(net.parameters(), lr=0.001)
 
 
 for epoch in range(start_epochs+1, num_epochs+1):
-    train_x, train_y = generate_batch_data(positive_data, negative_data, infor_method, informative_minority_data, border_majority_data, batch_size)
+    train_x, train_y = generate_batch_data(base_train_data, base_train_label, batch_size)
 
 
     input_data = torch.Tensor(torch.from_numpy(train_x).float())
