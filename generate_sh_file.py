@@ -108,7 +108,7 @@ print('train com num is {0}'.format(len(train_command_list)))
 print('test_num is {0}'.format(test_num))
 print('test com num is {0}'.format(len(test_command_list)))
 
-total_file_num = 10
+total_file_num = 4
 # total_length = len(command_list)
 train_start = 0
 test_start = 0
