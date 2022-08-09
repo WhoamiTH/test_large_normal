@@ -189,7 +189,7 @@ class Classification(nn.Module):
         self.fc2   = nn.Linear(32, 16)
         self.fc3   = nn.Linear(16, 1)
   
-    def forward(self, x1, x2): 
+    def forward(self, x1): 
         x = self.conv1(x1)
         x = self.relu(x)
         x = nn.functional.max_pool2d(x, (2, 2))
