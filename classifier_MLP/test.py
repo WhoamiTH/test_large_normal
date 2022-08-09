@@ -198,11 +198,17 @@ set_para()
 
 os.environ["CUDA_VISIBLE_DEVICES"] = str(device_id)
 
-train_file_name = '/srv/scratch/z5102138/cifar10/all_train_data.pkl'
-train_label_name = '/srv/scratch/z5102138/cifar10/all_train_label.pkl'
+# train_file_name = '/srv/scratch/z5102138/cifar10/all_train_data.pkl'
+# train_label_name = '/srv/scratch/z5102138/cifar10/all_train_label.pkl'
 
-test_file_name = '/srv/scratch/z5102138/cifar10/all_test_data.pkl'
-test_label_name = '/srv/scratch/z5102138/cifar10/all_test_label.pkl'
+# test_file_name = '/srv/scratch/z5102138/cifar10/all_test_data.pkl'
+# test_label_name = '/srv/scratch/z5102138/cifar10/all_test_label.pkl'
+
+train_file_name = '/data/hantai/cifar10/all_train_data.pkl'
+train_label_name = '/data/hantai/cifar10/all_train_label.pkl'
+
+test_file_name = '/data/hantai/cifar10/all_test_data.pkl'
+test_label_name = '/data/hantai/cifar10/all_test_label.pkl'
 
 
 # ############################# 注意修改模型及方法名称 ##############################
