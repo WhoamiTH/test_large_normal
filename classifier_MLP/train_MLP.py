@@ -226,10 +226,10 @@ dependency_dict = {
 
 
 # dependency_list = ['20000', '15000', '10000', '8000', '5000', '2000']
-dependency_list = ['2000', '1500', '1000', '500', '200']
+# dependency_list = ['2000', '1500', '1000', '500', '200']
+dependency_list = ['200',  '500', '1000', '1500', '2000']
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
 
 for train_epoch in dependency_list:
     history_train_method = 'MLP_{0}_{1}'.format(infor_method, train_epoch)
@@ -240,6 +240,8 @@ for train_epoch in dependency_list:
         # 找到模型，追训
         net = torch.load(history_model_name, map_location=device)
         start_epochs = int(train_epoch)
+    else:
+        # 没有找到，开始训练
         break
 
 if start_epochs == 0:
@@ -319,13 +321,34 @@ for epoch in range(start_epochs+1, num_epochs+1):
         # auc = skmet.roc_auc_score(y_true=input_valid_label, y_score=result)
         # print('epoch {:.0f}, loss {:.4f}, train acc {:.2f}%, f1 {:.4f}, precision {:.4f}, recall {:.4f}, auc {:.4f}'.format(epoch+1, train_loss, train_acc*100, f1, pre, rec, auc) )
         print('epoch {:.0f}, loss {:.4f}'.format(epoch+1, train_loss) )
-    if epoch == save_epoch:
+    if cur_train_epochs == save_epoch:
         cur_train_method_list = [model_type, infor_method, str(save_epoch)]
         cur_train_method = '_'.join(cur_train_method_list)
         cur_model_name = './test_{0}/model_{1}/record_{2}/{1}_{3}'.format(dataset_name, cur_train_method, record_index, dataset_index)
         torch.save(net, cur_model_name)
         save_epoch = dependency_dict[epoch]
         print('save model {0}'.format(cur_model_name))
+
+        last_train_epoch = 0
+        for train_epoch in dependency_list:
+            history_train_method = 'MLP_{0}_{1}'.format(infor_method, train_epoch)
+            history_model_name = './test_{0}/model_{1}/record_{2}/{1}_{3}'.format(dataset_name, history_train_method, record_index, dataset_index)
+            # 判断追训模型是否存在
+            print(history_model_name)
+            if os.path.exists(history_model_name):
+                # 更新已有模型标记
+                last_train_epoch = train_epoch
+            else:
+                save_epoch = train_epoch
+                if last_train_epoch != cur_train_epochs:
+                    history_train_method = 'MLP_{0}_{1}'.format(infor_method, last_train_epoch)
+                    history_model_name = './test_{0}/model_{1}/record_{2}/{1}_{3}'.format(dataset_name, history_train_method, record_index, dataset_index)
+                    net = torch.load(history_model_name, map_location=device)
+                    cur_train_epochs = last_train_epoch
+                break
+    
+    if cur_train_epochs >= num_epochs:
+        break
 
             
 cur_train_method_list = [model_type, infor_method, str(save_epoch)]
